@@ -60,6 +60,10 @@ router:
     annotations:
       cloud.google.com/backend-config: '{"default": "http-hc-config"}'
 ingress:
-  enabled: true
-  gcp: true
-  name: router
+  enabled: false
+  hosts:
+    - host: router.local
+      paths:
+        - path: /
+          pathType: Prefix
+  tls: []
